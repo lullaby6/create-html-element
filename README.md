@@ -74,6 +74,7 @@ JavaScript:
 import {customHTMLElement, HTMLElementAddEventListener} from "custom-html-element";
 
 function MyCounter({count}){
+
     // creating a reference to hit the button
     const ref = crypto.randomUUID();
 
@@ -85,6 +86,7 @@ function MyCounter({count}){
 
         // when any attribute of the custom element is updated, it will be re-rendered
         this.setAttribute("count", parseInt(count) + 1);
+
     })
 
     return `
