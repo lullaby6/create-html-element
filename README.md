@@ -104,3 +104,57 @@ custom element function, otherwise it will throw an error
  -->
 <my-counter count="0"></my-counter>
 ```
+
+## Now let's create a simple ToDo List App
+
+JavaScript:
+
+```js
+import {createHTMLElement, HTMLElementAddEventListener} from "./index.js";
+
+function TodoList({todos}) {
+    todos = JSON.parse(todos);
+
+    const formRef = crypto.randomUUID();
+
+    HTMLElementAddEventListener(formRef, "submit", (event) => {
+        event.preventDefault();
+        const formData = new FormData(event.target);
+        const formProps = Object.fromEntries(formData);
+
+        todos.push({id: crypto.randomUUID(), text: formProps["todo"]})
+
+        this.setAttribute("todos", JSON.stringify(todos));
+    })
+
+    todos.forEach(todo => {
+        HTMLElementAddEventListener(todo.id, "click", (event) => {
+            todos.splice(todos.findIndex(todo => todo.id === event.target.id), 1);
+
+            this.setAttribute("todos", JSON.stringify(todos));
+        })
+    })
+
+    return `
+        <div>
+            <form id="${formRef}">
+                <input type="text" placeholder="todo" name="todo">
+                <input type="submit" value="add todo">
+            </form>
+            <ul>
+                ${todos.map(todo => `
+                    <li id="${todo.id}">${todo.text}</li>`
+                ).join("")}
+            </ul>
+        </div>
+    `
+}
+
+createHTMLElement(TodoList)
+```
+
+HTML:
+
+```html
+<todo-list todos="[]"></todo-list>
+```

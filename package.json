@@ -1,6 +1,6 @@
 {
     "name": "custom-html-element",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "description": "Create reusable and reactive Web Components using Custom Element API.",
     "main": "index.js",
     "repository": {
