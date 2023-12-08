@@ -1,0 +1,21 @@
+{
+    "name": "create-html-element",
+    "version": "1.0.0",
+    "description": "Create reusable and reactive Web Components using Custom Element API.",
+    "main": "index.js",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/lullaby6/create-html-element.git"
+    },
+    "keywords": [
+        "web-component",
+        "web-components",
+        "custom-element",
+        "custom-elements"
+    ],
+    "author": "lullaby6",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/lullaby6/create-html-element/issues"
+    }
+}
