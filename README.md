@@ -104,7 +104,7 @@ HTML:
 you need to specify the attributes to be used in the
 custom element function, otherwise it will throw an error
  -->
-<my-counter count='0'></my-counter>
+<my-counter count="0"></my-counter>
 ```
 
 ## Now let's create a simple ToDo List App
