@@ -1,4 +1,4 @@
-# create-html-element
+# custom-html-element
 
 Create reusable and reactive Web Components using Custom Element API.
 
@@ -7,13 +7,13 @@ Create reusable and reactive Web Components using Custom Element API.
 Using NPM:
 
 ```sh
-npm install create-html-element
+npm install custom-html-element
 ```
 
 Using the CDN:
 
 ```html
-<script defer src="https://cdn.jsdelivr.net/npm/create-html-element/dist/cdn.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/custom-html-element/dist/cdn.js"></script>
 ```
 
 # Usage
@@ -24,7 +24,7 @@ JavaScript:
 
 ```js
 // if you are using the CDN, you don't need import anything
-import {createHTMLElement, HTMLElementAddEventListener} from "create-html-element";
+import {customHTMLElement, HTMLElementAddEventListener} from "custom-html-element";
 
 function MyCounter({count}){
     // creating a reference to hit the button
@@ -42,8 +42,8 @@ function MyCounter({count}){
     `
 }
 
-// use the createHTMLElement method to define the custom element
-createHTMLElement(MyCounter)
+// use the customHTMLElement method to define the custom element
+customHTMLElement(MyCounter)
 ```
 
 HTML:

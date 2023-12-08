@@ -1,4 +1,4 @@
-function createHTMLElement(callback) {
+function customHTMLElement(callback) {
     const name = (/function ([^(]*)/.exec( callback+"" )[1]).replace(/[A-Z]/g, match => `-${match.toLowerCase()}`).slice(1);
 
     class HTMLElementClass extends HTMLElement {
