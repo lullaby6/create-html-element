@@ -26,7 +26,7 @@ JavaScript:
 // if you are using the CDN, you don't need import anything
 import {customHTMLElement} from "custom-html-element";
 
-function MyElement({count}){
+function MyElement(){
     return `
         <h1>Hello World</h1>
     `
