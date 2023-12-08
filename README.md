@@ -24,7 +24,7 @@ JavaScript:
 
 ```js
 // if you are using the CDN, you don't need import anything
-import {customHTMLElement, HTMLElementAddEventListener} from "custom-html-element";
+import {customHTMLElement} from "custom-html-element";
 
 function MyElement({count}){
     return `
@@ -75,6 +75,8 @@ HTML:
 JavaScript:
 
 ```js
+import {customHTMLElement, HTMLElementAddEventListener} from "custom-html-element";
+
 function MyCounter({count}){
     // creating a reference to hit the button
     const ref = crypto.randomUUID();
@@ -93,6 +95,8 @@ function MyCounter({count}){
         <button id="${ref}">${count}</button>
     `
 }
+
+customHTMLElement(MyCounter)
 ```
 
 HTML:
