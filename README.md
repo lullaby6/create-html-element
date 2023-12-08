@@ -13,7 +13,7 @@ npm install custom-html-element
 Using the CDN:
 
 ```html
-<script defer src="https://cdn.jsdelivr.net/npm/custom-html-element/dist/cdn.js"></script>
+<script defer src='https://cdn.jsdelivr.net/npm/custom-html-element/dist/cdn.js'></script>
 ```
 
 # Usage
@@ -24,7 +24,7 @@ JavaScript:
 
 ```js
 // if you are using the CDN, you don't need import anything
-import {customHTMLElement} from "custom-html-element";
+import {customHTMLElement} from 'custom-html-element'
 
 function MyElement(){
     return `
@@ -71,21 +71,21 @@ HTML:
 JavaScript:
 
 ```js
-import {customHTMLElement, HTMLElementAddEventListener} from "custom-html-element";
+import {customHTMLElement, HTMLElementAddEventListener} from 'custom-html-element'
 
 function MyCounter({count}){
 
     // creating a reference to hit the button
-    const ref = crypto.randomUUID();
+    const ref = crypto.randomUUID()
 
     /*
     use the HTMLElementAddEventListener method for add a
     event listener to elements inside custom elements
     */
-    HTMLElementAddEventListener(ref, "click", () => {
+    HTMLElementAddEventListener(ref, 'click', () => {
 
         // when any attribute of the custom element is updated, it will be re-rendered
-        this.setAttribute("count", parseInt(count) + 1);
+        this.setAttribute('count', parseInt(count) + 1)
 
     })
 
@@ -104,7 +104,7 @@ HTML:
 you need to specify the attributes to be used in the
 custom element function, otherwise it will throw an error
  -->
-<my-counter count="0"></my-counter>
+<my-counter count='0'></my-counter>
 ```
 
 ## Now let's create a simple ToDo List App
@@ -112,28 +112,28 @@ custom element function, otherwise it will throw an error
 JavaScript:
 
 ```js
-import {createHTMLElement, HTMLElementAddEventListener} from "./index.js";
+import {createHTMLElement, HTMLElementAddEventListener} from './index.js'
 
 function TodoList({todos}) {
-    todos = JSON.parse(todos);
+    todos = JSON.parse(todos)
 
-    const formRef = crypto.randomUUID();
+    const formRef = crypto.randomUUID()
 
-    HTMLElementAddEventListener(formRef, "submit", (event) => {
-        event.preventDefault();
-        const formData = new FormData(event.target);
-        const formProps = Object.fromEntries(formData);
+    HTMLElementAddEventListener(formRef, 'submit', (event) => {
+        event.preventDefault()
+        const formData = new FormData(event.target)
+        const formProps = Object.fromEntries(formData)
 
-        todos.push({id: crypto.randomUUID(), text: formProps["todo"]})
+        todos.push({id: crypto.randomUUID(), text: formProps['todo']})
 
-        this.setAttribute("todos", JSON.stringify(todos));
+        this.setAttribute('todos', JSON.stringify(todos))
     })
 
     todos.forEach(todo => {
-        HTMLElementAddEventListener(todo.id, "click", (event) => {
-            todos.splice(todos.findIndex(todo => todo.id === event.target.id), 1);
+        HTMLElementAddEventListener(todo.id, 'click', (event) => {
+            todos.splice(todos.findIndex(todo => todo.id === event.target.id), 1)
 
-            this.setAttribute("todos", JSON.stringify(todos));
+            this.setAttribute('todos', JSON.stringify(todos))
         })
     })
 
@@ -146,7 +146,7 @@ function TodoList({todos}) {
             <ul>
                 ${todos.map(todo => `
                     <li id="${todo.id}">${todo.text}</li>`
-                ).join("")}
+                ).join('')}
             </ul>
         </div>
     `
@@ -158,5 +158,5 @@ createHTMLElement(TodoList)
 HTML:
 
 ```html
-<todo-list todos="[]"></todo-list>
+<todo-list todos='[]'></todo-list>
 ```
