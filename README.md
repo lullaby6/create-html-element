@@ -50,7 +50,7 @@ customHTMLElement(MyCounter)
 HTML:
 
 ```html
-<!-- you need to specify the attributes to be used -->
-<!-- in the custom element function, otherwise it will throw an error -->
+<!-- you need to specify the attributes to be used in the -->
+<!-- custom element function, otherwise it will throw an error -->
 <my-counter count="0"></my-counter>
 ```
