@@ -30,7 +30,8 @@ function MyCounter({count}){
     // creating a reference to hit the button
     const ref = crypto.randomUUID();
 
-    // use the HTMLElementAddEventListener method for add event listener to elements inside custom elements
+    // use the HTMLElementAddEventListener method for add a
+    // event listener to elements inside custom elements
     HTMLElementAddEventListener(ref, "click", () => {
 
         // when any attribute of the custom element is updated, it will be re-rendered
@@ -49,6 +50,7 @@ customHTMLElement(MyCounter)
 HTML:
 
 ```html
-<!-- you need to specify the attributes to be used in the custom element function, otherwise it will throw an error -->
+<!-- you need to specify the attributes to be used -->
+<!-- in the custom element function, otherwise it will throw an error -->
 <my-counter count="0"></my-counter>
 ```
